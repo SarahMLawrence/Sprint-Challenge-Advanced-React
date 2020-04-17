@@ -58,7 +58,7 @@ class PlayerCard extends React.Component {
 
         return (
 
-            <div className="followerCard">
+            <div className="playerCard">
 
                 {Array.isArray(this.state.playerData) && this.state.playerData.map(play => {
 
@@ -66,11 +66,12 @@ class PlayerCard extends React.Component {
 
 
 
-                    return <div className="followers" key={play.name}>
+                    return <div className="players" key={play.name}>
 
 
                         <h3>{play.name}</h3>
-
+                        <p>{play.country}</p>
+                        <p>{play.searches}</p>
                     </div>
 
 

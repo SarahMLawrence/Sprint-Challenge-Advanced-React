@@ -2,7 +2,8 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-import "PlayerCard" from "./co"
+import Navbar from './components/Navbar';
+import PlayerCard from './components/PlayerCard';
 
 class App extends React.Component {
 
@@ -38,13 +39,8 @@ class App extends React.Component {
     return (
 
       <div>
-        <div className="playerCard">
-          <h3>{this.state.plyaerInfo.name}</h3>
-          <p>{this.state.playerInfo.country}</p>
-          <p>{this.state.playerInfo.searches}</p>
-
-        </div>
-
+      <Navbar />
+      <PlayerCard />
       </div>
       )
 
