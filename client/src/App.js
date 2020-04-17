@@ -2,7 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-
+import './styles.scss';
 
 import Navbar from './components/Navbar';
 import PlayerCard from './components/PlayerCard';
