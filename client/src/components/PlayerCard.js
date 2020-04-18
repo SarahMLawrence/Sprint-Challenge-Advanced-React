@@ -69,7 +69,7 @@ class PlayerCard extends React.Component {
                     return <div className="players" key={play.name}>
 
 
-                        <h3>{play.name}</h3>
+                        <h3>name{play.name}</h3>
                         <p>{play.country}</p>
                         <p>{play.searches}</p>
                     </div>
