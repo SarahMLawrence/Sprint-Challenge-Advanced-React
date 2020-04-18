@@ -1,40 +1,40 @@
 
-import React from "react";
+// import React from "react";
 
-import Chart from "./Chart";
+// import Chart from "./Chart";
 
 
 
-const Charts = ({ playerData }) => {
+// const Charts = ({ playerData }) => {
 
-  return (
+//   return (
 
-    <div className="charts">
+//     <div className="charts">
 
-      {playerData.map(player => (
+//       {playerData.map(player => (
 
-        <div className="chart__container" key={player.name}>
+//         <div className="chart__container" key={player.name}>
 
-          <h2 className="coin__title">{player.name}</h2>
+//           <h2 className="coin__title">{player.name}</h2>
 
-          <h4 className="coin__symbol">{player.country}</h4>
+//           <h4 className="coin__symbol">{player.country}</h4>
 
-          <div className="coin__logo">
+//           <div className="coin__logo">
 
-            <img src={player.image} height="40" alt={player.name} />
+//             <img src={player.image} height="40" alt={player.name} />
 
-          </div>
+//           </div>
 
-          <Chart sparklineData={player.sparkline_in_7d.price} />
+//           <Chart sparklineData={player.sparkline_in_7d.price} />
 
-        </div>
+//         </div>
 
-      ))}
+//       ))}
 
-    </div>
+//     </div>
 
-  );
+//   );
 
-};
+// };
 
-export default Charts;
+// export default Charts;
