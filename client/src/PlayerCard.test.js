@@ -1,13 +1,13 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import * as rtl from '@testing-library/react';
 import PlayerCard from './components/PlayerCard';
 
 test("renders PlayCard without crashing", () => {
-  render(<PlayerCard />);
+  const PlayCard = rtl.render(<PlayerCard />);
 });
 
-test("renders name on PlayCard component", async () =>{
-  const { getByText } = render(<PlayerCard/>);
-  const playName = getByText(/name/i);
-  expect(playName).toBeInTheDocument();
+it("renders", () =>{
+  const player = rtl.render(<PlayerCard/>);
+  player.getByText(/player/i);
+  
 });

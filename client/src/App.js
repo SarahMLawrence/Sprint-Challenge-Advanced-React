@@ -1,53 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import "./App.css";
+import axios from "axios";
+import Navbar from "./components/Navbar";
+import PlayerCard from "./components/PlayerCard";
+import Charts from "./components/Charts";
 
+const App = () => {
+  const [playerData, setPlayerData] = useState([]);
 
+  useEffect(() => {
+    axios
 
-import Navbar from './components/Navbar';
-import PlayerCard from './components/PlayerCard';
+      .get("http://localhost:5000/api/players")
 
-class App extends React.Component {
+      .then((res) => setPlayerData(res.data))
 
-  //constructor
-  constructor() {
-    super();
-    this.state = {
-      playerInfo: []
-    };
-  }
+      .catch((err) => console.log(err));
+  }, []);
 
-  //did mount
-  componentDidMount() {
-    fetch('http://localhost:5000/api/players')
-      .then(res => res.json())
-      .then(playerData => {
-        console.log("Player:", playerData);
-        this.setState({ playerInfo: playerData });
-      })
-
-      .catch(err => {
-        console.log(err);
-      })
-
-
-  }
-
-  render() {
-
-    console.log("Rendering");
-
-
-    return (
-
-      <div>
-        <h1>the Players</h1>
+  return (
+    <div className="App">
       <Navbar />
       <PlayerCard />
-      </div>
-      )
 
-  }
-}
+      <Charts playerData={playerData}/>
+    </div>
+  );
+};
 
 export default App;

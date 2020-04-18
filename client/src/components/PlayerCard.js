@@ -59,6 +59,7 @@ class PlayerCard extends React.Component {
         return (
 
             <div className="playerCard">
+                <h2>Player</h2>
 
                 {Array.isArray(this.state.playerData) && this.state.playerData.map(play => {
 
@@ -67,9 +68,8 @@ class PlayerCard extends React.Component {
 
 
                     return <div className="players" key={play.name}>
-
-
-                        <h3>name{play.name}</h3>
+                        
+                        <h3>{play.name}</h3>
                         <p>{play.country}</p>
                         <p>{play.searches}</p>
                     </div>
